@@ -1,0 +1,57 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ETHUSDT backtest chart">
+  <rect width="1200" height="700" fill="#0e0e0e"/>
+  <text x="40" y="45" fill="#d7d7d7" font-family="Segoe UI, Arial" font-size="26" font-weight="600">ETHUSDT Backtest — Equity + Trade Outcome Distribution</text>
+  <text x="40" y="75" fill="#8d96a7" font-family="Segoe UI, Arial" font-size="16">Jan 2025 → Apr 2026 | Total P&amp;L +124.90 USDT | Max DD 0.11%</text>
+
+  <line x1="60" y1="120" x2="60" y2="390" stroke="#2c2c2c"/>
+  <line x1="60" y1="390" x2="1140" y2="390" stroke="#2c2c2c"/>
+
+  <polyline fill="none" stroke="#35d6d0" stroke-width="4" points="
+    70,320 100,322 130,321 160,325 190,324 220,326 250,323 280,327 310,326 340,324
+    370,322 400,320 430,290 460,248 490,210 520,170 550,206 580,238 610,270 640,296
+    670,310 700,316 730,320 760,324 790,326 820,325 850,324 880,326 910,325 940,324
+    970,325 1000,324 1030,325 1060,324 1090,325 1120,324"/>
+
+  <line x1="60" y1="460" x2="1140" y2="460" stroke="#2c2c2c"/>
+  <g opacity="0.95">
+    <rect x="74" y="460" width="10" height="12" fill="#d94f4f"/><rect x="88" y="450" width="10" height="10" fill="#17c3b2"/>
+    <rect x="102" y="460" width="10" height="16" fill="#d94f4f"/><rect x="116" y="448" width="10" height="12" fill="#17c3b2"/>
+    <rect x="130" y="460" width="10" height="20" fill="#d94f4f"/><rect x="144" y="446" width="10" height="14" fill="#17c3b2"/>
+    <rect x="158" y="460" width="10" height="14" fill="#d94f4f"/><rect x="172" y="444" width="10" height="16" fill="#17c3b2"/>
+    <rect x="186" y="460" width="10" height="18" fill="#d94f4f"/><rect x="200" y="452" width="10" height="8" fill="#17c3b2"/>
+    <rect x="214" y="460" width="10" height="22" fill="#d94f4f"/><rect x="228" y="450" width="10" height="10" fill="#17c3b2"/>
+    <rect x="242" y="460" width="10" height="12" fill="#d94f4f"/><rect x="256" y="446" width="10" height="14" fill="#17c3b2"/>
+    <rect x="270" y="460" width="10" height="17" fill="#d94f4f"/><rect x="284" y="451" width="10" height="9" fill="#17c3b2"/>
+    <rect x="298" y="460" width="10" height="19" fill="#d94f4f"/><rect x="312" y="447" width="10" height="13" fill="#17c3b2"/>
+    <rect x="326" y="460" width="10" height="21" fill="#d94f4f"/><rect x="340" y="449" width="10" height="11" fill="#17c3b2"/>
+    <rect x="354" y="460" width="10" height="15" fill="#d94f4f"/><rect x="368" y="446" width="10" height="14" fill="#17c3b2"/>
+    <rect x="382" y="460" width="10" height="18" fill="#d94f4f"/><rect x="396" y="450" width="10" height="10" fill="#17c3b2"/>
+    <rect x="410" y="460" width="10" height="20" fill="#d94f4f"/><rect x="424" y="445" width="10" height="15" fill="#17c3b2"/>
+    <rect x="438" y="460" width="10" height="12" fill="#d94f4f"/><rect x="452" y="452" width="10" height="8" fill="#17c3b2"/>
+    <rect x="466" y="460" width="10" height="24" fill="#d94f4f"/><rect x="480" y="448" width="10" height="12" fill="#17c3b2"/>
+    <rect x="494" y="460" width="10" height="16" fill="#d94f4f"/><rect x="508" y="446" width="10" height="14" fill="#17c3b2"/>
+    <rect x="522" y="460" width="10" height="18" fill="#d94f4f"/><rect x="536" y="450" width="10" height="10" fill="#17c3b2"/>
+    <rect x="550" y="460" width="10" height="22" fill="#d94f4f"/><rect x="564" y="447" width="10" height="13" fill="#17c3b2"/>
+    <rect x="578" y="460" width="10" height="14" fill="#d94f4f"/><rect x="592" y="451" width="10" height="9" fill="#17c3b2"/>
+    <rect x="606" y="460" width="10" height="20" fill="#d94f4f"/><rect x="620" y="448" width="10" height="12" fill="#17c3b2"/>
+    <rect x="634" y="460" width="10" height="16" fill="#d94f4f"/><rect x="648" y="452" width="10" height="8" fill="#17c3b2"/>
+    <rect x="662" y="460" width="10" height="19" fill="#d94f4f"/><rect x="676" y="449" width="10" height="11" fill="#17c3b2"/>
+    <rect x="690" y="460" width="10" height="23" fill="#d94f4f"/><rect x="704" y="446" width="10" height="14" fill="#17c3b2"/>
+    <rect x="718" y="460" width="10" height="15" fill="#d94f4f"/><rect x="732" y="451" width="10" height="9" fill="#17c3b2"/>
+    <rect x="746" y="460" width="10" height="18" fill="#d94f4f"/><rect x="760" y="448" width="10" height="12" fill="#17c3b2"/>
+    <rect x="774" y="460" width="10" height="21" fill="#d94f4f"/><rect x="788" y="447" width="10" height="13" fill="#17c3b2"/>
+    <rect x="802" y="460" width="10" height="12" fill="#d94f4f"/><rect x="816" y="452" width="10" height="8" fill="#17c3b2"/>
+    <rect x="830" y="460" width="10" height="24" fill="#d94f4f"/><rect x="844" y="449" width="10" height="11" fill="#17c3b2"/>
+    <rect x="858" y="460" width="10" height="16" fill="#d94f4f"/><rect x="872" y="446" width="10" height="14" fill="#17c3b2"/>
+    <rect x="886" y="460" width="10" height="18" fill="#d94f4f"/><rect x="900" y="451" width="10" height="9" fill="#17c3b2"/>
+    <rect x="914" y="460" width="10" height="22" fill="#d94f4f"/><rect x="928" y="448" width="10" height="12" fill="#17c3b2"/>
+    <rect x="942" y="460" width="10" height="14" fill="#d94f4f"/><rect x="956" y="450" width="10" height="10" fill="#17c3b2"/>
+    <rect x="970" y="460" width="10" height="20" fill="#d94f4f"/><rect x="984" y="447" width="10" height="13" fill="#17c3b2"/>
+    <rect x="998" y="460" width="10" height="17" fill="#d94f4f"/><rect x="1012" y="451" width="10" height="9" fill="#17c3b2"/>
+    <rect x="1026" y="460" width="10" height="19" fill="#d94f4f"/><rect x="1040" y="448" width="10" height="12" fill="#17c3b2"/>
+    <rect x="1054" y="460" width="10" height="22" fill="#d94f4f"/><rect x="1068" y="446" width="10" height="14" fill="#17c3b2"/>
+  </g>
+
+  <text x="60" y="520" fill="#8d96a7" font-family="Segoe UI, Arial" font-size="14">Trade outcome bars (78 trades): denser sequence with slight negative skew</text>
+  <text x="60" y="548" fill="#8d96a7" font-family="Segoe UI, Arial" font-size="14">Profile: largely sideways equity, isolated spike, pullback, then flat</text>
+</svg>
