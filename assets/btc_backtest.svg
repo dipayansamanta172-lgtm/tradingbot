@@ -1,0 +1,52 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BTCUSDT backtest chart">
+  <rect width="1200" height="700" fill="#0e0e0e"/>
+  <text x="40" y="45" fill="#d7d7d7" font-family="Segoe UI, Arial" font-size="26" font-weight="600">BTCUSDT Backtest — Equity + Trade Outcome Distribution</text>
+  <text x="40" y="75" fill="#8d96a7" font-family="Segoe UI, Arial" font-size="16">Jan 2024 → Apr 2026 | Total P&amp;L +13,597.86 USDT | Max DD 1.68%</text>
+
+  <line x1="60" y1="120" x2="60" y2="390" stroke="#2c2c2c"/>
+  <line x1="60" y1="390" x2="1140" y2="390" stroke="#2c2c2c"/>
+
+  <polyline fill="none" stroke="#35d6d0" stroke-width="4" points="
+    70,360 110,350 150,338 190,330 230,320 270,310 310,300 350,288 390,274 430,258
+    470,244 510,228 550,210 590,192 630,176 670,168 710,156 750,162 790,180 830,208
+    870,236 910,252 950,234 990,216 1030,198 1070,182 1110,170"/>
+
+  <g opacity="0.95">
+    <line x1="60" y1="460" x2="1140" y2="460" stroke="#2c2c2c"/>
+    <rect x="80" y="440" width="18" height="20" fill="#17c3b2"/>
+    <rect x="108" y="460" width="18" height="26" fill="#d94f4f"/>
+    <rect x="136" y="446" width="18" height="14" fill="#17c3b2"/>
+    <rect x="164" y="460" width="18" height="34" fill="#d94f4f"/>
+    <rect x="192" y="430" width="18" height="30" fill="#17c3b2"/>
+    <rect x="220" y="460" width="18" height="22" fill="#d94f4f"/>
+    <rect x="248" y="438" width="18" height="22" fill="#17c3b2"/>
+    <rect x="276" y="460" width="18" height="18" fill="#d94f4f"/>
+    <rect x="304" y="432" width="18" height="28" fill="#17c3b2"/>
+    <rect x="332" y="460" width="18" height="20" fill="#d94f4f"/>
+    <rect x="360" y="436" width="18" height="24" fill="#17c3b2"/>
+    <rect x="388" y="460" width="18" height="30" fill="#d94f4f"/>
+    <rect x="416" y="448" width="18" height="12" fill="#17c3b2"/>
+    <rect x="444" y="460" width="18" height="28" fill="#d94f4f"/>
+    <rect x="472" y="434" width="18" height="26" fill="#17c3b2"/>
+    <rect x="500" y="460" width="18" height="24" fill="#d94f4f"/>
+    <rect x="528" y="442" width="18" height="18" fill="#17c3b2"/>
+    <rect x="556" y="460" width="18" height="18" fill="#d94f4f"/>
+    <rect x="584" y="430" width="18" height="30" fill="#17c3b2"/>
+    <rect x="612" y="460" width="18" height="22" fill="#d94f4f"/>
+    <rect x="640" y="436" width="18" height="24" fill="#17c3b2"/>
+    <rect x="668" y="460" width="18" height="16" fill="#d94f4f"/>
+    <rect x="696" y="446" width="18" height="14" fill="#17c3b2"/>
+    <rect x="724" y="460" width="18" height="32" fill="#d94f4f"/>
+    <rect x="752" y="438" width="18" height="22" fill="#17c3b2"/>
+    <rect x="780" y="460" width="18" height="26" fill="#d94f4f"/>
+    <rect x="808" y="432" width="18" height="28" fill="#17c3b2"/>
+    <rect x="836" y="460" width="18" height="20" fill="#d94f4f"/>
+    <rect x="864" y="440" width="18" height="20" fill="#17c3b2"/>
+    <rect x="892" y="460" width="18" height="18" fill="#d94f4f"/>
+    <rect x="920" y="434" width="18" height="26" fill="#17c3b2"/>
+    <rect x="948" y="460" width="18" height="24" fill="#d94f4f"/>
+  </g>
+
+  <text x="60" y="520" fill="#8d96a7" font-family="Segoe UI, Arial" font-size="14">Trade outcome bars (32 trades): teal = profitable, red = losing</text>
+  <text x="60" y="548" fill="#8d96a7" font-family="Segoe UI, Arial" font-size="14">Profile: overall growth, mid-period peak, drawdown, then recovery</text>
+</svg>
