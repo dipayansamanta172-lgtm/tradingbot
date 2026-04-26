@@ -1,0 +1,111 @@
+//@version=6
+strategy("Bullish Fib GZ + FVG Strategy [1:4 RR]",
+     overlay=true,
+     default_qty_type=strategy.percent_of_equity,
+     default_qty_value=1,
+     max_boxes_count=100,
+     max_lines_count=100,
+     max_labels_count=100,
+     pyramiding=0)
+
+grp1 = "🔷 Swing Settings"
+i_swingLen = input.int(10, "Swing Lookback (bars)", minval=3, maxval=50, group=grp1)
+
+grp2 = "🟡 Fibonacci Golden Zone"
+i_fibTop = input.float(0.618, "Golden Zone Top   (0.618)", minval=0.1, maxval=1.0, step=0.001, group=grp2)
+i_fibBot = input.float(0.660, "Golden Zone Bottom(0.660)", minval=0.1, maxval=1.0, step=0.001, group=grp2)
+
+grp3 = "📦 FVG / Breaker Settings"
+i_fvgLookback = input.int(40, "Look-back bars for FVG & Breaker", minval=5, maxval=200, group=grp3)
+
+grp4 = "💰 Risk Management"
+i_rr = input.float(4.0, "Risk : Reward Ratio (1 : X)", minval=1.0, step=0.5, group=grp4)
+i_slBuffer = input.float(0.1, "SL buffer below swing low (%)", minval=0.0, step=0.05, group=grp4)
+
+grp5 = "🎨 Display"
+i_showGZ = input.bool(true, "Show Golden Zone box", group=grp5)
+i_showFVG = input.bool(true, "Show FVG box", group=grp5)
+i_showBB = input.bool(true, "Show Breaker Block alert", group=grp5)
+i_showTPSL = input.bool(true, "Show TP / SL lines", group=grp5)
+
+pivLow = ta.pivotlow(low, i_swingLen, i_swingLen)
+pivHigh = ta.pivothigh(high, i_swingLen, i_swingLen)
+
+var float swLowPrice = na
+var float swHighPrice = na
+var int swLowBar = na
+var int swHighBar = na
+
+if not na(pivLow)
+    swLowPrice := pivLow
+    swLowBar := bar_index - i_swingLen
+
+if not na(pivHigh)
+    swHighPrice := pivHigh
+    swHighBar := bar_index - i_swingLen
+
+bullishSwing = not na(swLowPrice) and not na(swHighPrice) and (swLowBar < swHighBar)
+
+fibRange = bullishSwing ? swHighPrice - swLowPrice : na
+gzTop = bullishSwing ? swHighPrice - fibRange * i_fibTop : na
+gzBot = bullishSwing ? swHighPrice - fibRange * i_fibBot : na
+
+priceInGZ = bullishSwing and not na(gzTop) and not na(gzBot) and (low <= gzTop) and (high >= gzBot)
+
+findBullishFVG(gTop, gBot) =>
+    found = false
+    foundTop = float(na)
+    foundBot = float(na)
+    if not na(gTop) and not na(gBot)
+        for i = 1 to i_fvgLookback - 1
+            leftHigh = high[i + 1]
+            rightLow = low[i - 1]
+            if leftHigh < rightLow
+                olTop = math.min(rightLow, gTop)
+                olBot = math.max(leftHigh, gBot)
+                if olTop > olBot
+                    found := true
+                    foundTop := rightLow
+                    foundBot := leftHigh
+                    break
+    [found, foundTop, foundBot]
+
+[fvgFound, fvgTop, fvgBot] = findBullishFVG(gzTop, gzBot)
+
+findBreakerBlock(gTop, gBot) =>
+    found = false
+    if not na(gTop) and not na(gBot)
+        for i = 2 to i_fvgLookback
+            isBearishCandle = close[i] < open[i]
+            bbHigh = high[i]
+            bbLow = low[i]
+            olTop = math.min(bbHigh, gTop)
+            olBot = math.max(bbLow, gBot)
+            if isBearishCandle and olTop > olBot
+                brokenAbove = false
+                for j = 0 to i - 1
+                    if high[j] > bbHigh
+                        brokenAbove := true
+                        break
+                if brokenAbove
+                    found := true
+                    break
+    found
+
+breakerInZone = findBreakerBlock(gzTop, gzBot)
+
+longCondition = bullishSwing and priceInGZ and fvgFound and not breakerInZone and strategy.position_size == 0
+
+var float entryPx = na
+var float slPx = na
+var float tpPx = na
+
+if longCondition
+    slBuffer = swLowPrice * (i_slBuffer / 100.0)
+    entryPx := close
+    slPx := swLowPrice - slBuffer
+    tpPx := entryPx + (entryPx - slPx) * i_rr
+
+if longCondition
+    strategy.entry("Long", strategy.long)
+    strategy.exit("Exit", "Long", stop=slPx, limit=tpPx)
